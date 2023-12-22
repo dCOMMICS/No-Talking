@@ -44,21 +44,21 @@ async function fetchAndShowResult(url){
 //  create movie card html template
 
 function createMovieCard(movie) {
-    const { posterPath, originalTitle, ReleaseDate, overview } = movie;
+    const { poster_path, original_title, release_date, overview } = movie;
 
-    const imagePath = posterPath ? imgApi + posterPath : "./img-01.jpeg";
+    const imagePath = poster_path ? imgApi + poster_path : "./img-01.jpeg";
 
-    const truncatedTitle = originalTitle.length > 15 ?
-    originalTitle.slice(0,15) + "..." : originalTitle ;
+    const truncatedTitle = original_title.length > 15 ?
+    original_title.slice(0,15) + "..." : original_title ;
 
-    const formattedDate = ReleaseDate || " No release date";
+    const formattedDate = release_date || " No release date";
 
     const cardTemplate = `
             <div class="column"> 
             <div class = "row">
             <a class = "card-media" href = "./img-01.jpeg">
 
-            <img src = "${imagePath}" alt = "{originalTitle}" width = "100%" />
+            <img src = "${imagePath}" alt = "{original_title}" width = "100%" />
 
             </a>
 
