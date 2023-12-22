@@ -102,7 +102,7 @@ function clearResult (){
 
 function showResult (item){
     const newResult = item.map(createMovieCard).join(",");
-    result.innerHTML = newContent || <p>No results found.</p>;
+    result.innerHTML = newContent || <p> No results found.</p>;
 
 
 }
