@@ -64,7 +64,7 @@ function clearResult() {
 
 function showResult(items) {
   const newResult = items.map(createMovieCard).join(",");
-  result.innerHTML = newResult || "<p>No results found.</p>";
+  result.innerHTML += newResult || "<p>No results found.</p>";
 }
 
 async function loadMoreResults() {

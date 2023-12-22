@@ -138,9 +138,23 @@ body{
 #result {
 
 
-    display: flex;
+    display: grid;
 
-    /* set on display */
+    /* set on display (change dispaly to flex after fixing ERROR) */
     max-width: 1200px;
     gap: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width: 550px) {
+    .search-box{
+        justify-content: center;
+    }
+
+    .search-box form{
+        margin-top: 10px;
+    }
+
 }
