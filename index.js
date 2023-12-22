@@ -148,3 +148,15 @@ async function handleSearch(){
 form.addEventListener ('submit', handleSearch);
 window.addEventListener ('scroll', detectEnd);
 window.addEventListener ('resize', detectEnd);
+
+
+// initialize the page
+
+async function init(){
+    clearResults();
+    const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&page=${page}`;
+    isSearching = false;
+    await fetchAndShowResults(url);
+}
+
+init ();
