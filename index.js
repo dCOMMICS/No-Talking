@@ -142,3 +142,5 @@ async function handleSearch(){
         query.value = "";
     }
 }
+
+// event listners 
