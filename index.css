@@ -122,4 +122,20 @@ body{
     background-image: linear-gradient(180deg, rgba(51, 55, 69, 0, #101528));
 }
 
+.container .card:hover .card-btn{
+    background-color: #0091ea;
+    border-color: #21a8fc;
+}
 
+
+.container .card:hover .info {
+    max-height: 200px;
+    opacity: 1;
+    padding: 8px 0;
+
+}
+
+#result {
+    display: flex;
+    max-width: 1200px;
+}
