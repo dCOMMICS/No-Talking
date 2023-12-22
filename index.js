@@ -75,9 +75,70 @@ function createMovieCard(movie) {
                          </div>
 
                          <div class = " info">
-                         $ {overview || "No Overview yet....." } 
-    `
+                              $ {overview || "No Overview yet....." } 
+
+                         </div>
+
+                    </div>
+                </div>
+            </div>
+    `;
+
+    return cardTemplate;
 
     
 }
 
+
+//  clear result element for serach
+
+
+function clearResult (){
+    result.innerHTML = "";
+}
+
+
+//  show result in page
+
+function showResult (item){
+    const newResult = item.map(createMovieCard).join(",");
+    result.innerHTML = newContent || <p>No results found.</p>;
+
+
+}
+
+
+// load more results
+
+async function loadMoreResults (){
+    if(isSearching){ return; } 
+    page++;
+    const searchTerm = query.value;
+    const url = searchTerm ? `${searchUrl}${searchTerm} &page = ${page}` : `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&page=${page}`;
+    await fetchAndShowResult (url);
+
+
+}
+
+// delete end of page and load more results
+
+function detectEnd(){
+    const {scrollTop, clientHeight, scrollHeight} = document.documentElement;
+    if (scrollTop > clientHeight >= scrollHeight - 20) {
+        loadMoreResults();
+    }
+}
+
+//  handle serach
+
+async function handleSearch(){
+    e.preventDefault();
+    const searchTerm = query.value.trim();
+    if(searchTerm){
+        isSearching = true;
+        clearResult();
+        const newUrl = `${searchUrl}${searchTerm} &page=${page}`;
+        await fetchAndShowResult(newUrl)
+        query.value = "";
+    }
+}
