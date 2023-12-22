@@ -138,4 +138,5 @@ body{
 #result {
     display: flex;
     max-width: 1200px;
+    gap: 15px;
 }
