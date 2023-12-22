@@ -136,7 +136,11 @@ body{
 }
 
 #result {
+
+
     display: flex;
+
+    /* set on display */
     max-width: 1200px;
     gap: 15px;
 }
