@@ -1,3 +1,5 @@
+// API KEY completly 
+
 const apiKey = "YOUR_API_KEY";
 const imgApi = "https://image.tmdb.org/t/p/w1280";
 const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=`;
@@ -6,6 +8,7 @@ const query = document.getElementById("search-input");
 const result = document.getElementById("result");
 
 let page = 1;
+
 let isSearching = false;
 
 // Fetch JSON data from url
@@ -60,6 +63,7 @@ function createMovieCard(movie) {
     `;
     return cardTemplate;
 }
+
 
 // Clear result element for search
 function clearResults() {
