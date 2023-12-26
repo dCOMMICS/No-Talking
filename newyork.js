@@ -32,6 +32,8 @@ async function fetchAndShowResult(url) {
     }
 }
 
+
+
 // Create movie card html template
 function createMovieCard(movie) {
     const { poster_path, original_title, release_date, overview } = movie;
