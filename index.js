@@ -1,4 +1,4 @@
-const apiKey  = "57046980c6ff8ad9d06dbb4f5b94e93c"
+// const apiKey  = "57046980c6ff8ad9d06dbb4f5b94e93c"
 
 const imgApi = "https://image.tmdb.org/t/p/w1280"
 
